@@ -1,0 +1,39 @@
+/* Keep browser-default typography and controls. */
+body { margin: 16px; }
+#timer { font-size: 2rem; }
+section { margin-bottom: 32px; }
+
+/* Assignment 2 content page: background and main texts */
+.assignment-page {
+  background-color: #f5f3ef;
+  color: #333333;
+}
+
+/* Parallel Prototypes big headings*/
+.assignment-page h1 {
+  color: #263b36;
+  font-size: 40px;
+}
+
+/* Area 1 / Area 2 headings*/
+.assignment-page h2 {
+  color: #3e554e;
+  font-size: 28px;
+}
+
+/* Prototype heading size */
+.assignment-page h3 {
+  font-size: 20px;
+}
+
+/* Link color, including visited sites.*/
+.assignment-page a,
+.assignment-page a:visited {
+  color: #42685b;
+}
+
+/* Mouse stop or keyboard selected link color*/
+.assignment-page a:hover,
+.assignment-page a:focus-visible {
+  color: #233d33;
+}

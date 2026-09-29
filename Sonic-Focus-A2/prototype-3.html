@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hidden Timer — Sonic Focus</title>
+  <link rel="stylesheet" href="prototype.css">
+  <script src="sound.js" defer></script>
+  <script src="timer.js" defer></script>
+</head>
+<body data-prototype="3">
+  <h1>Sonic Focus</h1>
+  <p>Prototype 3: Hidden Timer</p>
+  <button id="reveal">Show time</button>
+  <div id="timer" hidden>25:00</div>
+  <div>
+    <button id="start">Start</button>
+    <button id="pause" disabled>Pause</button>
+    <button id="reset">Reset</button>
+  </div>
+  <p id="status" role="status">Ready</p>
+  <p><label>Session <select id="duration">
+    <option value="1500">25 minutes</option>
+    <option value="30">30 seconds (test)</option>
+  </select></label></p>
+  
+  <label>Soundscape <select id="sound">
+    <option value="rain">Rain</option>
+    <option value="forest">Forest</option>
+  </select></label>
+  <div>
+    <button id="play-sound">Play sound</button>
+    <button id="pause-sound">Pause sound</button>
+  </div>
+  <p id="audio-status" role="status"></p>
+  <p>Check the remaining time only when needed.</p>
+  <p><a href="assignment2.html">Back to Assignment 2</a></p>
+</body>
+</html>

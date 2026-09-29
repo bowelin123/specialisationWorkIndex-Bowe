@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Circular Progress Timer — Sonic Focus</title>
+  <link rel="stylesheet" href="prototype.css">
+  <script src="sound.js" defer></script>
+  <script src="timer.js" defer></script>
+</head>
+<body data-prototype="2">
+  <h1>Sonic Focus</h1>
+  <p>Prototype 2: Circular Progress Timer</p>
+  <svg width="130" height="130" viewBox="0 0 120 120" role="img" aria-label="Time remaining">
+    <circle cx="60" cy="60" r="50" fill="none" stroke="#ddd" stroke-width="8" />
+    <circle id="arc" cx="60" cy="60" r="50" fill="none" stroke="black" stroke-width="8" pathLength="100" stroke-dasharray="100" transform="rotate(-90 60 60)" />
+  </svg>
+  <div id="percent">100% remaining</div>
+  <div>
+    <button id="start">Start</button>
+    <button id="pause" disabled>Pause</button>
+    <button id="reset">Reset</button>
+  </div>
+  <p id="status" role="status">Ready</p>
+  <p><label>Session <select id="duration">
+    <option value="1500">25 minutes</option>
+    <option value="30">30 seconds (test)</option>
+  </select></label></p>
+  
+  <label>Soundscape <select id="sound">
+    <option value="rain">Rain</option>
+    <option value="forest">Forest</option>
+  </select></label>
+  <div>
+    <button id="play-sound">Play sound</button>
+    <button id="pause-sound">Pause sound</button>
+  </div>
+  <p id="audio-status" role="status"></p>
+  <p>Watch a circle shrink as time passes.</p>
+  <p><a href="assignment2.html">Back to Assignment 2</a></p>
+</body>
+</html>

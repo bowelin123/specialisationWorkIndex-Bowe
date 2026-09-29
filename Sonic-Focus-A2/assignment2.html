@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment 2 — Sonic Focus</title>
+  <link rel="stylesheet" href="prototype.css">
+</head>
+
+<body class="assignment-page">
+<!--
+This page introduces my project Sonic Focus and organises the six prototypes
+into two areas: visualising time and sound experience.
+
+The opening paragraph explains the project's purpose.
+Each area begins with an introduction describing its design focus.
+Then each prototype has a linked heading and a paragraph explaining
+its interaction and the reasons behind the design choices.
+
+In addition, the final section links to my Community of Practice documentation
+and Peer User Testing Form. 
+-->
+  <h1>Parallel Prototypes</h1>
+
+  <p>
+    Sonic Focus is a browser based timer with immersive background sound. 
+    Its purpose is to support study or quiet work while allowing users to remain aware of a session without constantly checking the clock. 
+    These six parallel prototypes explore two areas: visualising time and experiencing time through sound. 
+    I have kept the interfaces simple so that users can focus on differences in experience, functionality rather than visual decoration.
+  </p>
+
+  <main>
+
+    <section>
+      <h2>Area 1 — Visualising Time</h2>
+      <p>
+      My first area of exploration concerns how remaining time is communicated visually. 
+      Despite a focus timer needs to make session progress understandable, a constantly visible countdown may also draw attention away from the activity.
+      Therefore, I designed three different types of time visibility: an exact digital countdown, a circular representation of the remaining time, and a timer that stays hidden until requested. 
+      I want to see how difference in timer’s visual style can influence the experience.
+      </p>
+      <p>
+      Additionally, across these variations, I retain the same Start, Pause and Reset controls and the same session-length options. 
+      This keeps the basic interaction consistent while changing how users access time information. In this area, my main aim is to discover the relationship between usability, visual prominence and user control. 
+      </p>
+
+      <h3>
+      <a href="prototype-1.html">Prototype 1: Digital Countdown</a>
+      </h3>
+
+      <p>
+      This prototype was my initial design. It displays the timer in an explicit way, through showing the remaining minutes and seconds directly. 
+      I chose a classical numerical font to make the timer easy to read. 
+      The Start, Pause and Reset button sets directly below the countdown, linking with other control panels closely. 
+      It explores how exact information and simple layout can help users to better organise and operate the whole timer easily.   
+      </p>
+
+      <details>
+    <summary>Commit Logs</summary>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Author</th>
+                <th>Date</th>
+                <th>Subject</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Bowe</td>
+                <td>Tue Sep 08 16:50:12 2026</td>
+                <td>Set up prototype structure</td>
+                <td>Created the Sonic Focus page structure with a heading, timer display and basic controls.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Wed Sep 09 20:38:12 2026</td>
+                <td>Add digital countdown</td>
+                <td>Added a 25-minute countdown displayed in minutes and seconds.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Thu Sep 10 13:50:30 2026</td>
+                <td>Add timer controls</td>
+                <td>Connected the Start, Pause and Reset buttons to the countdown.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Thu Sep 10 22:50:55 2026</td>
+                <td>Add background sound controls</td>
+                <td>Added Rain and Forest options with separate controls for playing and pausing the background sound.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Fri Sep 11 23:10:20 2026</td>
+                <td>Review countdown interaction</td>
+                <td>Reviewed the countdown display and button behaviour, keeping exact remaining time as the main visual feedback.</td>
+            </tr>
+        </tbody>
+    </table>
+</details>
+       
+
+      <h3><a href="prototype-2.html">Prototype 2: Circular Progress Timer</a></h3>
+      <p>
+      This prototype variates from my initial design. I gained the inspiration from <a href="https://visualtimer.com/">visual timer</a>. 
+      It shows the remaining time through a shrinking circular ring, supported by a percentage label.
+      Instead of emphasising individual seconds, the display shows the session as a whole and makes its remaining proportion visible. 
+      The circular form draws on the familiar appearance of a clock while changing the way of how user read the timer. 
+      I chose this mapping to explore whether an overview of progress can support time awareness during focused work.   
+      </p>
+
+    <details>
+    <summary>Commit Logs</summary>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Author</th>
+                <th>Date</th>
+                <th>Subject</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Bowe</td>
+                <td>Sat Sep 12 15:10:58 2026</td>
+                <td>Prepare for design of circular timer</td>
+                <td>Reused the basic timer controls to explore a different way of displaying session progress.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Sat Sep 12 21:20:34 2026</td>
+                <td>Add circular progress ring</td>
+                <td>Added an SVG circle with a background track and a foreground progress ring.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Sun Sep 13 14:15:40 2026</td>
+                <td>Connect ring to remaining time</td>
+                <td>Linked the ring to the remaining proportion of the session so it shrinks as time passes.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Sun Sep 13 20:38:15 2026</td>
+                <td>Add percentage feedback</td>
+                <td>Added a remaining percentage label to support interpretation of the circular display.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Mon Sep 14 17:50:08 2026</td>
+                <td>Review circular timer controls</td>
+                <td>Reviewed how pausing and resetting the timer affect the ring and percentage display.</td>
+            </tr>
+        </tbody>
+    </table>
+</details>
+
+      <h3><a href="prototype-3.html">Prototype 3: Hidden Timer</a></h3>
+      <p>
+      In this prototype, I tried a more interesting idea, which is hiding the countdown by default and provide a show time button. 
+      Users can reveal the remaining time when they want to check it, then hide it again. Basic status text remains visible so the interface can still communicate whether the session is ready, active, paused or complete.
+      This choice shifts control over time visibility to the user. It explores a less visually persistent form of feedback while retaining access to precise information and functions, rather than removing them entirely.
+      </p>
+    <details>
+    <summary>Commit Logs</summary>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Author</th>
+                <th>Date</th>
+                <th>Subject</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Bowe</td>
+                <td>Tue Sep 15 16:50:18 2026</td>
+                <td>Prepare hidden timer variation</td>
+                <td>Adapted the timer to explore a session without a constantly visible countdown.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Tue Sep 15 23:02:51 2026</td>
+                <td>Hide countdown by default</td>
+                <td>Kept the countdown running while hiding its numerical display from the initial interface.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Wed Sep 16 11:03:01 2026</td>
+                <td>Add time visibility control</td>
+                <td>Added a button that lets users show the remaining time and hide it again.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Wed Sep 16 21:13:06 2026</td>
+                <td>Keep session status visible</td>
+                <td>Retained status messages so users can identify the timer state even when the countdown is hidden.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Thu Sep 17 22:03:30 2026</td>
+                <td>Simplify interface and review reset</td>
+                <td>Reduced decorative elements and made Reset return the timer to its initial hidden state.</td>
+            </tr>
+        </tbody>
+    </table>
+</details>
+      
+
+    </section>
+
+    <section>
+
+      <h2>Area 2 — Sound Experience</h2>
+
+      <p>
+      My second area explores how sound can communicate the passage of time when users are looking away from the screen. It considers how time can also provide session feedback, and interact with the sound experience. 
+      These three prototypes variates from use of start and end bells, additional intervel bells, and a background soundscape that gradually becomes quieter.
+      In this area, I want to explore the balance between noticeable information and continuity of attention, rather than assuming that more frequent feedback is always desirable. 
+      Also, whether the whole experience still works without showing a visible timer.
+      </p>
+
+      <h3><a href="prototype-4.html">Prototype 4: Start & End Bell</a></h3>
+      <p>
+      My first prototype uses Temple bell to mark the beginning and completion of a session, without a continuously visible countdown. 
+      The same sound identifies both boundaries, while the surrounding buttons and status text clarify whether the session is starting or ending. 
+      Resuming after a pause does not repeat the opening bell. I chose this limited use of sound to explore feedback at meaningful transitions, while leaving the middle of the session free.
+      </p>
+
+     <details>
+    <summary>Commit Logs</summary>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Author</th>
+                <th>Date</th>
+                <th>Subject</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Bowe</td>
+                <td>Fri Sep 18 13:45:51 2026</td>
+                <td>Prepare sound feedback variation</td>
+                <td>Created a variation that communicates session boundaries through sound rather than a visible countdown.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Fri Sep 18 21:10:15 2026</td>
+                <td>Add opening bell</td>
+                <td>Connected a bell sound to the beginning of a new focus session.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Sat Sep 19 10:40:20 2026</td>
+                <td>Add end bell</td>
+                <td>Added a bell and a completion message when the remaining time reaches zero.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Sat Sep 19 22:10:03 2026</td>
+                <td>Separate starting from resuming</td>
+                <td>Adjusted the interaction progress so resuming a paused session does not repeat the opening bell.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Sun Sep 20 20:25:12 2026</td>
+                <td>Review session audio behaviour</td>
+                <td>Reviewed the opening and ending alongside the optional background sound controls.</td>
+            </tr>
+        </tbody>
+    </table>
+</details>
+
+      <h3><a href="prototype-5.html">Prototype 5: Halfway & Interval Bell</a></h3>
+      <p>
+      This prototype variate by adding a halfway bell and regular interval bells, while retaining Temple bell at the start and end. 
+      Halfway mode uses Temple bell once at the session midpoint; interval mode uses Singing bell every five minutes. 
+      In the 30-second test session, intervals occur every ten seconds. I chose these two patterns to explore occasional reassurance and repeated time awareness within the same prototype. 
+      Using a different sound for intervals distinguishes recurring progress cues from session boundaries without requiring users to watch the screen.
+      </p>
+
+     <details>
+    <summary>Commit Logs</summary>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Author</th>
+                <th>Date</th>
+                <th>Subject</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Bowe</td>
+                <td>Mon Sep 21 11:10:20 2026</td>
+                <td>Prepare progress bell variation</td>
+                <td>Extended the start and end bell concept to explore audio feedback during a session.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Mon Sep 21 17:50:30 2026</td>
+                <td>Add halfway bell</td>
+                <td>Added a single bell at the session midpoint to communicate progress without continuous visual feedback.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Mon Sep 21 23:10:48 2026</td>
+                <td>Add interval option</td>
+                <td>Added a choice between halfway feedback and recurring interval bells.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Tue Sep 22 14:35:51 2026</td>
+                <td>Set interval timing</td>
+                <td>Set regular cues to occur every five minutes, with ten-second intervals for the short test session.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Tue Sep 22 22:40:16 2026</td>
+                <td>Review scheduling</td>
+                <td>Reviewed timing across pause, resume and reset, including preventing repeated halfway bell.</td>
+            </tr>
+        </tbody>
+    </table>
+</details>
+
+      <h3><a href="prototype-6.html">Prototype 6: Evolving Soundscape</a></h3>
+      <p>
+      For the final prototype, it maps remaining session time to the volume of the selected Rain or Forest soundscape. Starting the timer starts the background sound, which gradually decreases from 50% to 10% volume before stopping at completion. 
+      Pause and Reset also control the session audio. I chose continuous volume change to explore a gradual way of expressing time, compared with the separate events used by the bell prototypes. The change concerns loudness rather than a new melody or sound source; 
+      its perceptibility remains a question for peer testing.
+      </p>
+
+     <details>
+    <summary>Commit Logs</summary>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Author</th>
+                <th>Date</th>
+                <th>Subject</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Bowe</td>
+                <td>Wed Sep 23 17:55:40 2026</td>
+                <td>Prepare evolving soundscape variation</td>
+                <td>Created a variation that communicates the passage of time through gradual changes in background sound volume.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Wed Sep 23 23:38:11 2026</td>
+                <td>Added shared audio assets</td>
+                <td>Updated the shared sound files to Rain and Forest MP3s.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Thu Sep 24 16:50:35 2026</td>
+                <td>Set remaining time and volume</td>
+                <td>Linked background volume to session progress, gradually reducing it from 50% to 10%.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Thu Sep 24 20:37:28 2026</td>
+                <td>Connect timer and sound playback</td>
+                <td>Connected session start to background playback and made pause, reset and completion control the audio.</td>
+            </tr>
+
+            <tr>
+                <td>Bowe</td>
+                <td>Fri Sep 25 22:05:10 2026</td>
+                <td>Review evolving sound interaction</td>
+                <td>Reviewed the gradual volume change, sound selection and session controls while retaining a minimal interface.</td>
+            </tr>
+        </tbody>
+    </table>
+</details>
+
+    </section>
+  </main>
+  <section>
+    <p>
+    <a href="https://miro.com/app/board/uXjVHzL_RrQ=/?share_link_id=587219938203">
+        Community of Practice Documentation</a>
+    </p>
+    <p>
+    <a href="https://forms.cloud.microsoft/r/B1R79igJjU">
+        Peer User Testing Form </a>
+    </p>
+</section>
+</body>
+
+</html>
