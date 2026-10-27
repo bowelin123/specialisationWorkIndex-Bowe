@@ -5,119 +5,92 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Assignment 3 — Final Instrument</title>
-  <link rel="stylesheet" href="prototype.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="assignment-page">
-<!--
--->
-  <h1>Final instrument- Sonic Focus</h1>
 
-  <p>
-    Sonic Focus is a browser based timer with immersive background . 
-    Its purpose is to support study or quiet work while allowing users to remain aware of a session without constantly checking the clock. 
-  </p>
+  <h1>Final Instrument - Sonic Focus</h1>
 
   <main>
 
     <section>
       <h2>Project Overview</h2>
       <p>
-     
-      </p>
-      <p>
-      
+    Sonic Focus is a browser-based timer with immersive background musics. Its purpose is to support study, work, or quiet meditation while allowing users to remain aware of a session without constantly checking the clock. 
+    It responds to the design scenario that asks users to relate to time using audio rather than quantitative measurement.
       </p>
 
-      <h3>
-    
-      </h3>
-
       <p>
-     
+      During the final design, I focused on making the website feel more welcoming. I updated the texts to make the website become more lively and better guide the users. 
+      For example, the introduction now says "Welcome to Sonic Focus!... Try it out!" to encourage users to start a session easily.
       </p>
-       
+      <p>
+        The main idea is to let users choose a soundscape and settle into their own rhythm, which avoids the stress caused by just showing a ticking clock with sounds.
+      </p>
     </section>
 
     <section>
-
-      <h2> How to Use </h2>
-
+      <h2>How to Use</h2>
       <p>
-      
+        1. Choose a session length (from 1 min to 25 min) and a soundscape (Rain or Forest).
       </p>
-
-      <h3>             </h3>
-
       <p>
-    
+        2. Press the "Start" button. Users will hear a gentle bell, and the background music will begin.
       </p>
-
+      <p>
+        3. Users can pause or reset the timer anytime. When the time is up, an end bell will ring to notify.
+      </p>
     </section>
 
-     <section>
-
-      <h2> Core Interactions </h2>
-
+    <section>
+      <h2>Core Interactions</h2>
       <p>
-      
+        Besides the standard start, pause, and reset controls, I designed a special <strong>"Hide Timer"</strong> button. 
       </p>
-
-      <h3>                   </h3>
-
       <p>
-    
+        This is a core interaction responding to the scenario. When users click it, the visual ring disappears and is replaced by a relaxing message: "A moment without the clock."
+        This allows users to focus entirely on the music without watching the numbers counting down, which can reduce time anxiety.
       </p>
-
-     </section>
-
-     <section>
-
-      <h2> Extended Technique </h2>
-
       <p>
-      
+        Users can also preview the sounds for 3 seconds and adjust the volume in real-time before starting their session.
       </p>
+    </section>
 
-      <h3>                   </h3>
-      
+    <section>
+      <h2>Extended Technique</h2>
       <p>
-    
+        For the technical implementation, I added the audio assets (rain, forest, and temple bell) from Assignment 2.
+        I used the <strong>Web Audio API</strong> to load and play them. This allows for precise scheduling of the start and end bells, and smooth volume changes.
       </p>
-
-     </section>
-
-      <section>
-
-      <h2> Design System </h2>
-
       <p>
-      
+        I also tried to use the new <strong>Temporal API</strong> in JavaScript for accurate time calculation. Because the Temporal API may not be supported by all browsers (like Firefox),
+        I built a <strong>fallback</strong> using the traditional `Date` object. This ensures the timer works perfectly and stays accurate on any device.
       </p>
+    </section>
 
-      <h3>                   </h3>
-      
+    <section>
+      <h2>Design System</h2>
       <p>
-    
+        <strong>Colour and Typography:</strong> I used a calm, nature-inspired colour palette (greens and warm whites) to create a quiet environment. The typography uses system fonts for clean readability.
       </p>
-
-     </section>
-
-     <section>
-
-      <h2> Development and Testing </h2>
-
       <p>
-      
+        <strong>Responsive Layout:</strong> The interface is fully responsive. I used CSS Grid and Flexbox, setting four main breakpoints: Medium (<840px), Expanded (840px - 1199px), Large (1200px - 1600px), and Extra-large (>1600px). The settings stack vertically on small screens so buttons are easy to tap.
       </p>
-
-      <h3>                   </h3>
-      
       <p>
-    
+        <strong>Accessibility:</strong> I included ARIA attributes (like `role="progressbar"` and `aria-valuetext`) so screen readers can announce the remaining time. I also added a visible focus outline for keyboard users and respected `prefers-reduced-motion` to turn off the ring animation for users who don't want it.
       </p>
+    </section>
 
-     </section>
+    <section>
+      <h2>Development and Testing</h2>
+      <p>
+        The development process was recorded using Git. I committed my work in several steps.
+      </p>
+      <p>
+        I tested the timer in both Chrome and Firefox. I checked the layout at 839px, 840px, 1200px, and 1600px to make sure the layout adapts smoothly. I also tested the audio unlock feature, making sure no sound plays until the user clicks a button.
+      </p>
+    </section>
 
      <details>
     <summary>Commit Logs</summary>
