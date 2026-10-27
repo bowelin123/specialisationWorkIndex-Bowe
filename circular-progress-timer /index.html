@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sonic Focus — A little space for yourself</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+
+ <!--During design of the website, I adopted native Temporal for time calculations, 
+       with a Date fallback built into app.js to ensure browser compatibility. --> 
+<body>
+  <header>
+    <strong>Sonic Focus</strong>
+    <time id="today" aria-label="Today's date"></time>
+  </header>
+
+  <main>
+    <div class="eyebrow">Study · Work · Relax · Meditate</div>
+    <h1>Welcome to Sonic Focus!</h1>
+    <p class="intro">Make a little space for yourself. Whether you are studying, working,
+      relaxing or meditating, choose a soundscape and settle into your own rhythm. Try it out!</p>
+
+     <!-- The main interactive panel, with simple layout that include all the elements: buttons, timer display,texts,etc. --> 
+    <section class="panel" aria-label="Focus timer">
+      <p id="status" class="notice" role="status">Ready to begin</p>
+      <!-- I used role="status" here so screen readers announce state changes (e.g 'Session paused'). --> 
+      <div class="stage">
+        <!-- I designed the ring as a visual progress indicator. The ARIA attributes ensure it is accessible. -->
+        <div id="timer-display" class="ring" role="progressbar" aria-label="Session time remaining" aria-valuemin="0"
+          aria-valuemax="1500" aria-valuenow="1500" aria-valuetext="25 minutes remaining">
+          <svg viewBox="0 0 216 216" aria-hidden="true">
+            <circle class="track" cx="108" cy="108" r="90"></circle>
+            <circle class="arc" id="arc" cx="108" cy="108" r="90"></circle>
+          </svg>
+          <div class="ring-center" aria-hidden="true">
+            <strong id="countdown">25:00</strong>
+            <span class="caption">remaining</span>
+          </div>
+        </div> 
+        <!-- I created this alternative hidden message section, so that users can choose to hide the timer. As a result, they can aviod constantly watching the timer. -->  
+        <div id="hidden-message" class="hidden-message" hidden>
+          <span class="quiet-mark" aria-hidden="true">♪</span>
+          <strong>A moment without the clock.</strong>
+          <p>Let the sound accompany you.<br>You can show the timer whenever you like.</p>
+        </div>
+      </div>
+      <!-- The toggle allows users to shift from quantitative time (numbers) to qualitative time (sound). -->
+      <div class="visibility-row">
+        <button id="toggle-timer" class="subtle" type="button" aria-controls="timer-display" aria-expanded="true">Hide
+          timer</button>
+      </div>
+
+      <div class="row controls">
+        <button id="start" class="primary" type="button">Start</button>
+        <button id="pause" type="button" disabled>Pause</button>
+        <button id="reset" type="button" disabled>Reset</button>
+      </div>
+
+      <div class="settings">
+        <label for="duration">Session length
+          <select id="duration">
+            <option value="300">5 minutes</option>
+            <option value="900">15 minutes</option>
+            <option value="1500" selected>25 minutes</option>
+            <option value="30">30 seconds</option>
+            <option value="60">1 minute </option>
+          </select>
+        </label>
+
+        <label for="sound">Soundscape
+          <select id="sound">
+            <option value="rain">Rain</option>
+            <option value="forest">Forest</option>
+          </select>
+        </label>
+
+        <div>
+          <label for="volume">Audio volume <output id="volume-value" for="volume">35%</output></label>
+          <input id="volume" type="range" min="0" max="100" value="35">
+          <p class="field-note">Soundscape and bell</p>
+        </div>
+
+        <div class="row audio-controls">
+          <button id="preview" type="button">Preview sound</button>
+        </div>
+      </div>
+
+      <p class="session-hint">A gentle bell marks the start and end. Hide the timer for a session guided by sound.</p>
+      <p id="audio-status" class="notice" role="status">Press Start or Preview sound to enable audio.</p>
+      <noscript>
+        <p class="notice">Please enable JavaScript to use the timer and sound controls.</p>
+      </noscript>
+    </section>
+  </main>
+
+  <footer>Take your time. Find your rhythm.</footer>
+</body>
+
+</html>

@@ -1,0 +1,392 @@
+* {
+  box-sizing: border-box;
+}
+
+/* The content is hidden, ensuring screen readers don't read out hidden UI, except user click hide timer.*/ 
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  background: #f3f5f0;
+  color: #243b35;
+  font: 16px/1.6 system-ui, sans-serif;
+}
+
+
+/* I designed a highly visible focus outline to support keyboard navigation. */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #ad6515;
+  outline-offset: 4px;
+}
+
+header, footer {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px 24px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #d4ddd3;
+}
+
+header strong {
+  font-size: 21px;
+}
+
+header time {
+  color: #5b7067;
+  font-size: 13px;
+}
+
+/* I set a readable centred column width, avoiding stretching every control. */
+main {
+  max-width: 840px;
+  margin: 32px auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 12px;
+  font-weight: 700;
+  color: #526c62;
+}
+
+h1 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  line-height: 1.2;
+  margin: 10px 0 12px;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.intro, .caption {
+  color: #5b7067;
+}
+
+.intro {
+  max-width: 64ch;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #d9e1d7;
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin: 24px 0;
+  box-shadow: 0 10px 30px #254a3210;
+}
+
+.stage {
+  min-height: 228px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ring {
+  position: relative;
+  width: 216px;
+  height: 216px;
+}
+
+.ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+.track {
+  stroke: #e8eee5;
+}
+
+.arc {
+  stroke: #537d62;
+  stroke-linecap: round;
+  stroke-dasharray: 565.49;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset .2s linear;
+}
+
+.ring-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ring-center strong {
+  font-size: 42px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+}
+
+.caption {
+  font-size: 14px;
+}
+
+.hidden-message {
+  max-width: 34ch;
+}
+
+.hidden-message strong {
+  display: block;
+  font-size: 20px;
+}
+
+.hidden-message p {
+  font-size: 14px;
+  color: #5b7067;
+}
+
+.quiet-mark {
+  display: block;
+  color: #537d62;
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.visibility-row {
+  text-align: center;
+  margin: 4px 0 16px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+button, select, input {
+  font: inherit;
+}
+
+button, select {
+  min-height: 46px;
+  border-radius: 10px;
+  border: 1px solid #bac9bd;
+  padding: 10px 18px;
+  background: #fff;
+  color: #243b35;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #eaf0e7;
+}
+
+button.primary {
+  background: #315f50;
+  color: #fff;
+  border-color: #315f50;
+}
+
+button.primary:hover:not(:disabled) {
+  background: #244c3f;
+}
+
+button.subtle {
+  border-color: transparent;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 14px;
+}
+
+button:disabled, select:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.settings {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  border-top: 1px solid #e2e8df;
+  padding-top: 24px;
+  margin-top: 24px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+select {
+  width: 100%;
+  margin-top: 6px;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #315f50;
+  min-height: 32px;
+  margin: 8px 0 0;
+}
+
+output {
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+.field-note {
+  color: #5b7067;
+  font-size: 12px;
+  margin: 0;
+}
+
+.audio-controls {
+  align-self: center;
+}
+
+.notice {
+  font-size: 14px;
+  min-height: 25px;
+  text-align: center;
+  padding: 4px 0;
+  color: #315f50;
+}
+
+.session-hint {
+  font-size: 13px;
+  color: #5b7067;
+  text-align: center;
+  margin-top: 24px;
+}
+
+footer {
+  color: #5b7067;
+  font-size: 13px;
+  border-top: 1px solid #d4ddd3;
+}
+
+footer span {
+  display: block;
+}
+
+/* Adaptive & Responsive Design 
+   Medium: below 840px.
+   Stack settings vertically to keep controls easy to read. */
+@media (width < 840px) {
+  main {
+    max-width: 680px;
+    margin: 24px auto;
+    padding: 0 20px;
+  }
+
+  header {
+    flex-wrap: wrap;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+
+  .settings {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .audio-controls {
+    justify-content: flex-start;
+  }
+}
+
+/* Expanded: 840px to 1200px.
+   Use two columns for settings within a readable content width. */
+@media (840px <= width < 1200px) {
+  main {
+    max-width: 780px;
+    margin: 28px auto;
+    padding: 0 24px;
+  }
+
+  .panel {
+    padding: 24px;
+  }
+
+  .settings {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+/* Large: 1200px to 1600px.
+   Keep the interface centred with more space around the panel. */
+@media (1200px <= width <= 1600px) {
+  main {
+    max-width: 840px;
+    margin: 32px auto;
+    padding: 0 24px;
+  }
+
+  .panel {
+    padding: 24px 28px;
+  }
+
+  .settings {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+/* Extra-large: above 1600px.
+   Increase spacing and the timer size without stretching text too far. */
+@media (width > 1600px) {
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 24px;
+  }
+
+  .panel {
+    padding: 32px 40px;
+  }
+
+  .settings {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .stage {
+    min-height: 250px;
+  }
+
+  .ring {
+    width: 236px;
+    height: 236px;
+  }
+}
+
+/* Reduce animation when the user prefers less motion. */
+@media (prefers-reduced-motion: reduce) {
+  .arc {
+    transition: none;
+  }
+}
+
+
