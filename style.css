@@ -85,6 +85,8 @@ footer {
 /* breakpoints from Material Design Spec https://m3.material.io/foundations/layout/breakpoints/overview */
 /* while sometimes mobile first is recommended, as we will be focused on desktop, we will start there */
 
+
+
 /* assumed base sizing is large (1200–1599px) : desktop  */
 
 /* extra-large breakpoint : desktop, ultrawide monitors */
@@ -131,6 +133,7 @@ footer {
 /* compact breakpoint : phone in portrait */
 @media (width < 600px) {
 
+    
 }
 p {
     line-height: 1.8;          
@@ -142,4 +145,33 @@ h1, h2, h3, h4 {
     line-height: 1.3;          
     margin-top: 1.5em;         
     margin-bottom: 0.5em;       
+}
+
+.home-page header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.home-page header h1 {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.home-page .header-icon {
+  width: 100px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+@media (max-width: 839px) {
+  .home-page .header-icon {
+    width: 60px;
+  }
+
+  .home-page header {
+    gap: 12px;
+  }
 }
