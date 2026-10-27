@@ -1,20 +1,15 @@
-/*!!!!!*/
-/*add in your own font imports here*/
-/*remember to update them in the rest of the CSS : eg the body selector*/
+
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-/*!!!!!*/
-/*change out, and/or add colours to the colour scheme*/
+
 :root{
-    /* basic 2-bit palette from 1bit Monitor Glow Palette by Polyducks */
-    /* https://lospec.com/palette-list/1bit-monitor-glow */
+    
     --colour-1: #f0f2ee;
     --colour-2: #1f2120;
 }
 
 /* this swaps the colour order to account for user's OS dark mode */
-/*!!!!!*/
-/*remember to update the colours here too to reflect the above changes*/
+
 @media (prefers-color-scheme: dark) {
     :root{
         --colour-1: #f0f2ee;
@@ -74,18 +69,10 @@ footer {
     margin-block-start: 3rem;
 }
 
-/*technique from Kevin Powell*/
-/*https://youtu.be/CU8Plk-53RU?si=zMpP0Pfbg1SaXeDB&t=255*/
-/*longer post about how this works and the * + * selector*/
-/*https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/*/
+
 .prose > * + * {
     margin-block-start: var(--prose-flow, 1em);
 }
-
-/* breakpoints from Material Design Spec https://m3.material.io/foundations/layout/breakpoints/overview */
-/* while sometimes mobile first is recommended, as we will be focused on desktop, we will start there */
-
-
 
 /* assumed base sizing is large (1200–1599px) : desktop  */
 
@@ -174,4 +161,37 @@ h1, h2, h3, h4 {
   .home-page header {
     gap: 12px;
   }
+}
+
+/* Layout for assignment 3 documentation pages */
+body.assignment-page {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  line-height: 1.7;
+}
+
+.assignment-page main {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.assignment-page section {
+  margin-bottom: 36px;
+}
+
+.assignment-page p {
+  margin: 12px 0;
+}
+
+.assignment-page li {
+  margin-bottom: 8px;
+}
+
+.assignment-page a {
+  color: inherit;
+  text-decoration: underline;
 }
